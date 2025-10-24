@@ -1,0 +1,150 @@
+╔══════════════════════════════════════════════════════════════╗
+║              🤔 QUAL ARQUIVO SQL USAR?                       ║
+╚══════════════════════════════════════════════════════════════╝
+
+Você tem 3 opções de SQL:
+
+═══════════════════════════════════════════════════════════════
+
+1️⃣  database.sql (ORIGINAL - Com dados de teste)
+─────────────────────────────────────────────────────────────
+
+📦 Contém:
+   ✅ Estrutura completa do banco
+   ✅ Usuário admin padrão
+   ✅ 3 pedidos de exemplo
+   ✅ Pessoas de exemplo
+
+👍 Use se:
+   • Vai fazer TESTES primeiro
+   • Quer ver como funciona com dados
+   • Está instalando em ambiente de DESENVOLVIMENTO
+
+❌ Não use se:
+   • Vai entregar para cliente FINAL
+   • Quer começar com banco LIMPO
+
+
+═══════════════════════════════════════════════════════════════
+
+2️⃣  database-LIMPO.sql (SEM dados de teste) ⭐ RECOMENDADO
+─────────────────────────────────────────────────────────────
+
+📦 Contém:
+   ✅ Estrutura completa do banco
+   ✅ Usuário admin padrão
+   ❌ Nenhum dado de teste
+
+👍 Use se:
+   • Vai entregar para o CLIENTE FINAL ⭐
+   • Quer começar do ZERO
+   • Sistema vai para PRODUÇÃO
+
+✅ MELHOR OPÇÃO para hospedagem!
+
+
+═══════════════════════════════════════════════════════════════
+
+3️⃣  SQL Baixado do seu phpMyAdmin (Com SEUS dados)
+─────────────────────────────────────────────────────────────
+
+📦 Contém:
+   ✅ Estrutura completa
+   ✅ Usuário admin (com a senha que você já usou)
+   ✅ TODOS os pedidos que você fez de teste
+
+👍 Use se:
+   • Quer manter os dados que já testou
+   • Já configurou usuários extras
+   • Quer migrar tudo que já tem
+
+⚠️ ATENÇÃO:
+   • Vai levar TODOS os testes junto
+   • Cliente vai ver os pedidos de teste
+   • Melhor limpar depois
+
+
+═══════════════════════════════════════════════════════════════
+
+🎯 RECOMENDAÇÃO FINAL:
+─────────────────────────────────────────────────────────────
+
+Para entregar ao CLIENTE, use:
+
+✅ database-LIMPO.sql
+
+Motivos:
+• Sistema limpo e profissional
+• Sem dados de teste do desenvolvedor
+• Cliente começa do zero
+• Arquivo menor e mais rápido
+• Mais organizado
+
+
+═══════════════════════════════════════════════════════════════
+
+📦 CHECKLIST ANTES DE COMPACTAR:
+─────────────────────────────────────────────────────────────
+
+Antes de compactar e enviar ao cliente:
+
+✅ Inclua: database-LIMPO.sql
+✅ Inclua: INSTALACAO-HOSPEDAGEM.txt
+✅ Inclua: LEIA-ME.txt
+✅ DELETE: resetar-senha-admin.php (se existir)
+❌ NÃO inclua: Seus backups pessoais
+❌ NÃO inclua: Arquivos temporários
+
+Arquivos da pasta uploads/:
+✅ Mantenha a pasta vazia (só com index.html)
+❌ Delete fotos de teste
+
+
+═══════════════════════════════════════════════════════════════
+
+🗜️ COMO COMPACTAR:
+─────────────────────────────────────────────────────────────
+
+Windows:
+1. Clique direito na pasta "sistema-reiki"
+2. Enviar para > Pasta compactada
+3. Renomeie para: sistema-reiki-mae-maria.zip
+
+Resultado:
+📦 sistema-reiki-mae-maria.zip (pronto para entregar!)
+
+
+═══════════════════════════════════════════════════════════════
+
+📧 O QUE ENVIAR AO CLIENTE:
+─────────────────────────────────────────────────────────────
+
+📦 sistema-reiki-mae-maria.zip
+
+📄 Instruções por email/WhatsApp:
+
+"Olá! Segue o sistema de Reiki completo e pronto.
+
+📦 Arquivo: sistema-reiki-mae-maria.zip
+
+📖 Para instalar:
+1. Extraia o arquivo ZIP
+2. Leia o arquivo: INSTALACAO-HOSPEDAGEM.txt
+3. Siga os 4 passos simples
+4. Use o arquivo: database-LIMPO.sql
+
+🔐 Login inicial:
+Email: admin@reiki.com
+Senha: admin123
+
+⚠️ Importante: Altere a senha após primeiro login!
+
+Qualquer dúvida, estou à disposição!"
+
+
+═══════════════════════════════════════════════════════════════
+
+🎉 Sistema profissional e pronto para entregar!
+
+═══════════════════════════════════════════════════════════════
+

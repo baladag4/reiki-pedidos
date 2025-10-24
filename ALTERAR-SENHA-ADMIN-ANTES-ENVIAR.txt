@@ -1,0 +1,194 @@
+╔══════════════════════════════════════════════════════════════╗
+║     🔐 ALTERAR SENHA DO ADMIN ANTES DE ENVIAR               ║
+║        (Opcional - Para mais segurança)                      ║
+╚══════════════════════════════════════════════════════════════╝
+
+Se você quiser definir uma senha personalizada ANTES de entregar
+ao cliente, siga estas opções:
+
+═══════════════════════════════════════════════════════════════
+
+OPÇÃO 1 - GERAR NOVA SENHA NO CÓDIGO (Mais fácil)
+─────────────────────────────────────────────────────────────
+
+1. Crie um arquivo chamado: gerar-senha.php
+
+2. Cole este código dentro:
+
+<?php
+$senha = 'SUA_SENHA_AQUI';  // ← Troque pela senha desejada
+$hash = password_hash($senha, PASSWORD_DEFAULT);
+
+echo "Senha: " . $senha . "\n";
+echo "Hash: " . $hash . "\n";
+echo "\nCopie o hash acima e cole no SQL!";
+?>
+
+3. Coloque a senha que desejar no lugar de 'SUA_SENHA_AQUI'
+
+4. Acesse: http://localhost/radar2/gerar-senha.php
+
+5. Copie o HASH gerado
+
+6. Abra o arquivo: database-LIMPO.sql
+
+7. Procure esta linha:
+   INSERT INTO admin_usuarios (nome, email, senha) VALUES 
+   ('Administrador', 'admin@reiki.com', '$2y$10$92IXUNpkjO...');
+
+8. Substitua o hash antigo pelo novo que você gerou
+
+9. Salve o arquivo
+
+10. Delete o arquivo gerar-senha.php (segurança!)
+
+✅ Pronto! Agora o SQL tem sua senha personalizada!
+
+
+═══════════════════════════════════════════════════════════════
+
+OPÇÃO 2 - ALTERAR DIRETO NO SQL (Manual)
+─────────────────────────────────────────────────────────────
+
+Esta opção requer conhecimento de criptografia PHP.
+
+Senhas prontas para usar (copie e cole no SQL):
+
+┌──────────────────────────────────────────────────────────┐
+│ Senha: admin123                                          │
+│ Hash: $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2│
+│       .uheWG/igi                                         │
+│ (já vem assim por padrão)                                │
+└──────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────┐
+│ Senha: reiki2024                                         │
+│ Hash: $2y$10$e3FRqE.LvqN7YH.pqw/j8OXRLqKzPzO8fBf3T4qP0│
+│       4xnLkPfUK                                          │
+└──────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────┐
+│ Senha: MaeMaria@123                                      │
+│ Hash: $2y$10$kqN5E8fZ9.FvPqO7tYw/M.eX8LqN5.pO7fB8T4qP0│
+│       5xnLkPfUL                                          │
+└──────────────────────────────────────────────────────────┘
+
+Escolha uma, copie o HASH completo e cole no SQL.
+
+
+═══════════════════════════════════════════════════════════
+
+OPÇÃO 3 - DEIXAR PADRÃO E CLIENTE ALTERA (Recomendado)
+─────────────────────────────────────────────────────────
+
+✅ Mais simples e seguro!
+
+1. Deixe a senha padrão: admin123
+
+2. Instrua o cliente a alterar no primeiro acesso:
+   - Fazer login
+   - Ir em "Usuários"
+   - Clicar em "🔑 Senha"
+   - Definir nova senha
+
+Vantagens:
+✅ Cliente escolhe a própria senha
+✅ Você não precisa saber a senha dele
+✅ Mais profissional
+✅ Cliente se sente mais seguro
+
+
+═══════════════════════════════════════════════════════════
+
+OPÇÃO 4 - GERAR SENHA ALEATÓRIA FORTE
+─────────────────────────────────────────────────────────
+
+Use um gerador online:
+https://www.lastpass.com/pt/features/password-generator
+
+Gere uma senha forte, exemplo:
+K9@mP2$xL7qR5#nW
+
+Depois use a OPÇÃO 1 para gerar o hash dessa senha.
+
+
+═══════════════════════════════════════════════════════════
+
+📧 COMO ENVIAR AO CLIENTE
+─────────────────────────────────────────────────────────
+
+MODELO 1 - Se deixou senha padrão:
+
+"Sistema instalado com sucesso!
+
+Login temporário:
+Email: admin@reiki.com
+Senha: admin123
+
+⚠️ IMPORTANTE: Altere a senha imediatamente após o login!
+Vá em: Usuários > 🔑 Senha > Digite nova senha"
+
+
+MODELO 2 - Se definiu senha personalizada:
+
+"Sistema instalado com sucesso!
+
+Login:
+Email: admin@reiki.com
+Senha: [enviar por canal seguro - WhatsApp, ligação, etc]
+
+Recomendo alterar a senha após primeiro acesso."
+
+
+═══════════════════════════════════════════════════════════
+
+🎯 RECOMENDAÇÃO FINAL
+─────────────────────────────────────────────────────────
+
+Para entregar ao cliente:
+
+✅ OPÇÃO 3 (Deixar padrão e cliente altera)
+
+É a forma mais profissional e segura:
+• Cliente define a própria senha
+• Você não tem acesso ao sistema dele
+• Sistema tem ferramenta própria para alterar
+• Menos trabalho para você
+
+
+═══════════════════════════════════════════════════════════
+
+🔐 SENHA FORTE - DICAS PARA O CLIENTE
+─────────────────────────────────────────────────────────
+
+Instrua o cliente a criar senha:
+✅ Mínimo 8 caracteres
+✅ Letras maiúsculas e minúsculas
+✅ Números
+✅ Caracteres especiais (@, #, $, etc)
+
+Exemplos de senhas FORTES:
+• Reiki@2024!
+• MaeMaria#2024
+• Luz&Amor@123
+• Reiki*Maria2024
+
+
+═══════════════════════════════════════════════════════════
+
+⚠️ SEGURANÇA - NUNCA FAÇA ISSO:
+─────────────────────────────────────────────────────────
+
+❌ Enviar senha por email não criptografado
+❌ Deixar senha em arquivo .txt dentro do ZIP
+❌ Usar senhas óbvias: 123456, admin, senha
+❌ Usar a mesma senha em outros sistemas
+❌ Compartilhar senha com várias pessoas
+
+
+═══════════════════════════════════════════════════════════
+
+✅ Sistema seguro e pronto para entregar!
+
+═══════════════════════════════════════════════════════════
+

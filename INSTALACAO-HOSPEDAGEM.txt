@@ -1,0 +1,225 @@
+╔══════════════════════════════════════════════════════════════╗
+║     🌸 SISTEMA DE REIKI - MÃE MARIA CELESTIAL 🌸            ║
+║            INSTALAÇÃO EM HOSPEDAGEM ONLINE                   ║
+╚══════════════════════════════════════════════════════════════╝
+
+📦 INSTALAÇÃO EM 4 PASSOS:
+
+═══════════════════════════════════════════════════════════════
+
+PASSO 1 - CRIAR BANCO DE DADOS NO CPANEL
+─────────────────────────────────────────────────────────────
+
+1. Entre no cPanel da sua hospedagem
+2. Procure por "MySQL Databases" ou "Bancos de Dados MySQL"
+3. Crie um novo banco de dados:
+   - Nome: reiki_mae_maria (ou qualquer nome)
+4. Anote os dados:
+   ✅ Nome do banco
+   ✅ Usuário do banco
+   ✅ Senha do banco
+   ✅ Host (geralmente: localhost)
+
+
+═══════════════════════════════════════════════════════════════
+
+PASSO 2 - IMPORTAR O SQL
+─────────────────────────────────────────────────────────────
+
+1. No cPanel, procure por "phpMyAdmin"
+2. Entre no phpMyAdmin
+3. Selecione o banco que você criou (lado esquerdo)
+4. Clique em "Importar" no topo
+5. Clique em "Escolher arquivo"
+6. Selecione: database.sql
+7. Clique em "Executar" no final da página
+8. Aguarde a mensagem de sucesso ✅
+
+⚠️ Se der erro de tamanho:
+   - Use database-LIMPO.sql (arquivo menor, sem dados de teste)
+
+
+═══════════════════════════════════════════════════════════════
+
+PASSO 3 - ENVIAR ARQUIVOS (FTP)
+─────────────────────────────────────────────────────────────
+
+OPÇÃO A - FileZilla (Recomendado):
+
+1. Baixe FileZilla Client (gratuito)
+2. Conecte com os dados FTP da hospedagem:
+   - Host: ftp.seusite.com
+   - Usuário: seu_usuario_ftp
+   - Senha: sua_senha_ftp
+   - Porta: 21
+
+3. Navegue até a pasta public_html (ou www, ou htdocs)
+
+4. Envie TODOS os arquivos do sistema-reiki
+   (EXCETO o arquivo resetar-senha-admin.php - delete ele!)
+
+⏱️ Tempo: 5-10 minutos (dependendo da internet)
+
+
+OPÇÃO B - Gerenciador de Arquivos do cPanel:
+
+1. Entre no cPanel
+2. Abra "Gerenciador de Arquivos"
+3. Vá para public_html
+4. Clique em "Enviar" ou "Upload"
+5. Primeiro, comprima tudo em .zip no seu PC
+6. Envie o arquivo .zip
+7. Clique com botão direito no .zip
+8. Escolha "Extrair"
+9. Delete o arquivo .zip após extrair
+
+
+═══════════════════════════════════════════════════════════════
+
+PASSO 4 - CONFIGURAR BANCO DE DADOS
+─────────────────────────────────────────────────────────────
+
+1. Abra o arquivo: config/database.php
+   (Use o editor do cPanel ou baixe, edite e reenvie)
+
+2. Altere estas linhas com os dados do PASSO 1:
+
+   define('DB_HOST', 'localhost');           ← Host do banco
+   define('DB_NAME', 'reiki_mae_maria');     ← Nome do banco
+   define('DB_USER', 'seu_usuario');         ← Usuário do banco
+   define('DB_PASS', 'sua_senha');           ← Senha do banco
+
+3. Salve o arquivo
+
+
+═══════════════════════════════════════════════════════════════
+
+✅ PRONTO! SISTEMA INSTALADO!
+─────────────────────────────────────────────────────────────
+
+Acesse seu site:
+
+🌐 Página Pública:
+   https://seusite.com/
+
+🔐 Área Admin:
+   https://seusite.com/admin/login.php
+
+   Login: admin@reiki.com
+   Senha: admin123
+
+⚠️ ALTERE A SENHA IMEDIATAMENTE!
+
+
+═══════════════════════════════════════════════════════════════
+
+🔒 SEGURANÇA APÓS INSTALAÇÃO
+─────────────────────────────────────────────────────────────
+
+✅ Altere a senha do admin
+✅ Delete arquivo resetar-senha-admin.php (se enviou)
+✅ Crie outros usuários admin em "Usuários"
+✅ Dê permissão de escrita na pasta uploads/ (chmod 755)
+
+
+═══════════════════════════════════════════════════════════════
+
+📱 PERMISSÕES DE PASTAS (Importante!)
+─────────────────────────────────────────────────────────────
+
+No Gerenciador de Arquivos do cPanel:
+
+1. Clique com botão direito na pasta "uploads"
+2. Escolha "Permissões" ou "Change Permissions"
+3. Configure para: 755 (rwxr-xr-x)
+4. Clique OK
+
+Isso permite que o sistema salve as fotos enviadas.
+
+
+═══════════════════════════════════════════════════════════════
+
+🆘 PROBLEMAS COMUNS
+─────────────────────────────────────────────────────────────
+
+❌ Página em branco / Erro 500
+   → Verifique config/database.php
+   → Verifique se importou o SQL
+   → Contate o suporte da hospedagem
+
+❌ "Erro de conexão"
+   → Dados do banco incorretos em config/database.php
+   → Verifique host, nome, usuário e senha
+
+❌ Upload não funciona
+   → Permissões da pasta uploads/ (chmod 755)
+   → Verifique limite de upload no PHP (php.ini)
+
+❌ "Forbidden" / "Access Denied"
+   → Verifique se os arquivos estão em public_html
+   → Verifique permissões dos arquivos (644 para .php)
+
+
+═══════════════════════════════════════════════════════════════
+
+📊 ESTRUTURA NO SERVIDOR
+─────────────────────────────────────────────────────────────
+
+Deve ficar assim:
+
+public_html/
+├── index.php
+├── database.sql
+├── database-LIMPO.sql
+├── config/
+│   ├── database.php
+│   └── auth.php
+├── admin/
+│   ├── login.php
+│   ├── dashboard.php
+│   ├── usuarios.php
+│   └── ...
+├── css/
+├── uploads/
+└── ...
+
+
+═══════════════════════════════════════════════════════════════
+
+💡 DICAS IMPORTANTES
+─────────────────────────────────────────────────────────────
+
+✅ Teste TUDO após instalar
+✅ Faça backup do banco regularmente
+✅ Mantenha a senha do admin segura
+✅ Use HTTPS (SSL) se disponível
+✅ Configure email para notificações (futuro)
+
+
+═══════════════════════════════════════════════════════════════
+
+📞 SUPORTE TÉCNICO DA HOSPEDAGEM
+─────────────────────────────────────────────────────────────
+
+Se tiver problemas, contate o suporte da sua hospedagem com:
+
+• "Preciso instalar um sistema PHP/MySQL"
+• "Preciso permissão de escrita na pasta uploads"
+• "Qual o host do banco MySQL?"
+
+A maioria dos suportes ajuda com isso! 😊
+
+
+═══════════════════════════════════════════════════════════════
+
+🎉 SISTEMA ONLINE E FUNCIONANDO!
+
+Agora seu sistema está disponível na internet para receber
+pedidos de Reiki de qualquer lugar do mundo!
+
+═══════════════════════════════════════════════════════════════
+
+              🙏 Que Mãe Maria abençoe seu trabalho! 🌹✨
+
+═══════════════════════════════════════════════════════════════
+

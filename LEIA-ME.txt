@@ -1,0 +1,46 @@
+🌸 SISTEMA DE REIKI - MÃE MARIA CELESTIAL 🌸
+
+═══════════════════════════════════════════════════════════════
+
+📦 INSTALAÇÃO RÁPIDA:
+
+1. Copie a pasta "sistema-reiki" para C:\xampp\htdocs\
+2. Importe "database.sql" no phpMyAdmin
+3. Acesse: http://localhost/sistema-reiki/
+
+🔐 LOGIN ADMIN:
+   Email: admin@reiki.com
+   Senha: admin123
+
+═══════════════════════════════════════════════════════════════
+
+✅ FUNCIONALIDADES:
+
+🌐 Página Pública (usuários):
+   • Enviar pedidos de Reiki
+   • Formulário para até 10 pessoas
+   • Upload de foto opcional
+   • Design rosa/pink com flores
+
+🔐 Área Admin (você):
+   • Ver todos os pedidos
+   • Marcar como concluído
+   • Gerenciar usuários
+   • Estatísticas
+
+═══════════════════════════════════════════════════════════════
+
+📱 TOTALMENTE RESPONSIVO (funciona em celular)
+
+🔒 SEGURO (senhas criptografadas)
+
+═══════════════════════════════════════════════════════════════
+
+🆘 PROBLEMAS?
+
+Leia: INSTALACAO-CLIENTE.txt (instruções detalhadas)
+
+═══════════════════════════════════════════════════════════════
+
+🙏 Sistema pronto para uso! 🌹✨
+
